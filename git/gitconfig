@@ -1,0 +1,27 @@
+[user]
+	name = Matthias Neumayr
+	email = matt.neumayr@gmail.com
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	ui = true
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ru = remote update
+	rs = remote -v show origin
+
+	pull = pull --rebase
+	pu = pull --rebase
+
+	merge = merge --no-ff
+	mg = merge --no-ff
+
+	lg = log --graph --abbrev-commit --all --color --pretty=oneline --decorate=short
+[core]
+	editor = vim
+	pager = less -r
