@@ -1,0 +1,39 @@
+-# D-bus
+if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+       eval `dbus-launch --sh-syntax --exit-with-session`
+fi
+
+# manually start notification daemon
+/usr/lib/notification-daemon-1.0/notification-daemon &
+
+# use gnome-settings-daemon to set styles/icons/...
+/usr/lib/gnome-settings-daemon/gnome-settings-daemon &
+
+# keyring
+gnome-keyring-daemon --start -c pkcs11 &
+
+# nitrogen - restore wallpaper
+#nitrogen --restore &
+
+# redshift to reduce eye-strain
+redshift -l 45.5:14.5 -t 5800:4700 -m vidmode -g 0.8 &
+
+# transparency
+xcompmgr -n -C &
+
+# panel/taskbar
+tint2 &
+
+# apps & applets
+
+gnome-screensaver &
+
+#nm-applet --sm-disable &
+bluetooth-applet &
+guake &
+
+#(sleep 3s && conky &) &
+(sleep 10s && dropboxd &) &
+#(sleep 5s && pytyle2 &) &
+
+export OOO_FORCE_DESKTOP=gnome 

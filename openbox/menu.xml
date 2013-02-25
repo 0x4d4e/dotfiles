@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="apps-accessories-menu" label="ACCESSOIRS --&gt;">
+		<item label="Password-Safe">
+			<action name="Execute">
+				<execute>
+					revelation
+				</execute>
+			</action>
+		</item>
+		<item label="Calculator">
+			<action name="Execute">
+				<command>
+					gnome-calculator
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Character Map">
+			<action name="Execute">
+				<command>
+					gnome-character-map
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="File Roller">
+			<action name="Execute">
+				<command>
+					ark
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="internet" label="INTERNET --&gt;">
+		<item label="Filezilla">
+			<action name="Execute">
+				<execute>
+					filezilla
+				</execute>
+			</action>
+		</item>
+		<item label="Transmission">
+			<action name="Execute">
+				<execute>
+					transmission 
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-office-menu" label="OFFICE --&gt;">
+		<item label="TeXMaker">
+			<action name="Execute">
+				<execute>
+					texmaker
+				</execute>
+			</action>
+		</item>
+		<item label="OpenOffice Writer">
+			<action name="Execute">
+				<command>
+					soffice -writer
+				</command>
+			</action>
+		</item>
+		<item label="OpenOffice Calc">
+			<action name="Execute">
+				<command>
+					soffice -calc
+				</command>
+			</action>
+		</item>
+		<item label="OpenOffice Draw">
+			<action name="Execute">
+				<command>
+					soffice -draw
+				</command>
+			</action>
+		</item>
+		<item label="OpenOffice Math">
+			<action name="Execute">
+				<command>
+					soffice -math
+				</command>
+			</action>
+		</item>
+		<item label="OpenOffice Impress">
+			<action name="Execute">
+				<command>
+					soffice -impress
+				</command>
+			</action>
+		</item>
+		<item label="OpenOffice Base">
+			<action name="Execute">
+				<command>
+					soffice -base
+				</command>
+			</action>
+		</item>
+		<item label="OpenOffice Printer Administration">
+			<action name="Execute">
+				<command>
+					spadmin
+				</command>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-multimedia-menu" label="MULTIMEDIA --&gt;">
+		<item label="Banshee">
+			<action name="Execute">
+				<command>
+					banshee-1
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="VLC">
+			<action name="Execute">
+				<command>
+					vlc
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-graphics-menu" label="GRAPHICS --&gt;">
+		<item label="Dia">
+			<action name="Execute">
+				<execute>
+					dia
+				</execute>
+			</action>
+		</item>
+		<item label="Gimp">
+			<action name="Execute">
+				<command>
+					gimp
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Inkscape">
+			<action name="Execute">
+				<command>
+					inkscape
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="system-menu" label="SYSTEM --&gt;">
+		<item label="Openbox Configuration Manager">
+			<action name="Execute">
+				<command>
+					obconf
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Gnome Control Center">
+			<action name="Execute">
+				<command>
+					gnome-control-center
+				</command>
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<item label="Disk Usage">
+			<action name="Execute">
+				<execute>
+					baobab
+				</execute>
+			</action>
+		</item>
+		<item label="Partition Editor">
+			<action name="Execute">
+				<execute>
+					gksu gparted
+				</execute>
+			</action>
+		</item>
+		<item label="Manage Cups Printers">
+			<action name="Execute">
+				<command>
+					xdg-open http://localhost:631/
+				</command>
+				<startupnotify>
+					<enabled>
+						no
+					</enabled>
+					<icon>
+						cups
+					</icon>
+				</startupnotify>
+			</action>
+		</item>
+		<separator/>
+		<item label="Reconfigure Openbox">
+			<action name="Reconfigure"/>
+		</item>
+		<item label="Exit Openbox">
+			<action name="Exit">
+				<prompt>
+					yes
+				</prompt>
+			</action>
+		</item>
+	</menu>
+	<menu id="code" label="CODING --&gt;">
+		<item label="Eclipse">
+			<action name="Execute">
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+				<execute>
+					eclipse
+				</execute>
+			</action>
+		</item>
+		<item label="Gobby">
+			<action name="Execute">
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+				<execute>
+					gobby-0.5
+				</execute>
+			</action>
+		</item>
+		<item label="Geany">
+			<action name="Execute">
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+				<execute>
+					geany
+				</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Firefox">
+			<action name="Execute">
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+				<execute>
+					firefox 
+				</execute>
+			</action>
+		</item>
+		<item label="Thunderbird">
+			<action name="Execute">
+				<startupnotify>
+					<enabled>
+						yes
+					</enabled>
+				</startupnotify>
+				<execute>
+					thunderbird
+				</execute>
+			</action>
+		</item>
+		<item label="Pidgin">
+			<action name="Execute">
+				<execute>
+					pidgin
+				</execute>
+			</action>
+		</item>
+		<item label="Nautilus">
+			<action name="Execute">
+				<execute>
+					nautilus
+				</execute>
+			</action>
+		</item>
+		<item label="Terminal">
+			<action name="Execute">
+				<execute>terminal</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="internet"/>
+		<menu id="apps-office-menu"/>
+		<menu id="code"/>
+		<menu id="apps-multimedia-menu"/>
+		<menu id="apps-graphics-menu"/>
+		<menu id="apps-accessories-menu"/>
+		<menu id="system-menu"/>
+	</menu>
+</openbox_menu>
