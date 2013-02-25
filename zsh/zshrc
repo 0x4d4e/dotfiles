@@ -1,0 +1,80 @@
+# oh-my-zsh
+
+# Path to your oh-my-zsh configuration.
+ZSH=/usr/share/oh-my-zsh/
+ZSH_CUSTOM=/home/matt/.zsh/custom/
+
+source $ZSH/oh-my-zsh.sh
+
+# end oh-my-zsh
+
+
+autoload -U compinit promptinit
+compinit
+promptinit
+
+
+# Global aliases -- These do not have to be
+# at the beginning of the command line.
+alias -g L='|less'
+alias -g H='|head'
+alias -g T='|tail'
+
+
+# Custom aliases
+alias moshango='mosh shango -p 20270 -- screen -Rd default'
+
+alias diff='colordiff'
+alias grep='grep --color=auto'
+alias more='less'
+alias df='df -h'
+alias du='du -c -h'
+alias mkdir='mkdir -p -v'
+alias ping='ping -c 5'
+alias ..='cd ..'
+alias ls='ls -hF --color=auto'
+
+alias guruscreen='screen /dev/ttyUSB0 115200'
+
+
+# Custom exports
+export EDITOR=vim
+export SCREENDIR=/home/matt/.screen/
+
+
+
+# Custom THEME
+# TODO: move to custom theme file
+
+# Color shortcuts
+autoload colors && colors
+for COLOR in RED GREEN YELLOW BLUE MAGENTA CYAN BLACK WHITE; do
+    eval $COLOR='%{$fg[${(L)COLOR}]%}'
+    eval S_$COLOR='%{$fg_no_bold[${(L)COLOR}]%}'
+    eval B_$COLOR='%{$fg_bold[${(L)COLOR}]%}'
+done
+RESET="%{$reset_color%}"
+
+# Check the UID
+if [[ $UID -ge 1000 ]]; then # normal user
+	eval PR_USER='${B_BLUE}%n${RESET}'
+#	eval PR_USER_OP='${B_BLUE}${RESET}'
+elif [[ $UID -eq 0 ]]; then # root
+	eval PR_USER='${B_RED}%n${RESET}'
+#	eval PR_USER_OP='${B_RED}%#${RESET}'
+fi
+
+# Check if we are on SSH or not
+if [[ -n "$SSH_CLIENT" || -n "$SSH2_CLIENT" ]]; then
+	eval PR_HOST='${B_YELLOW}%M${RESET}' #SSH
+else
+	eval PR_HOST='${B_BLUE}%M${RESET}' # no SSH
+fi
+
+
+local return_code="%(?..${RED}[%? ↵]${RESET})"
+
+# %B sets bold text
+PROMPT='%B[${PR_USER}@${PR_HOST}${RESET} ${PWD/#$HOME/~}%B]${RESET} '
+RPS1="${return_code}"
+
